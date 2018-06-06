@@ -1,0 +1,63 @@
+\definecolor{Azul}{RGB}{0,63,119}
+\definecolor{Oro}{RGB}{234,221,150}
+\newcommand{\colorvrule}[3]{
+\begingroup\color{#1}\vrule width#2 height#3
+\endgroup}
+\newcommand{\colorhrule}[2]{
+\begingroup\color{#1}\hrule height#2
+\endgroup}
+
+\begin{titlepage}
+\begin{center}
+\thispagestyle{empty}
+%% Barra izquierda - Escudos
+\hskip -2cm
+\begin{minipage}[c][10cm][s]{3cm}
+  \begin{center}
+    \includegraphics[height=2.6cm]{./titlepage/unam_azul_5x5cm}\\[10pt]
+    \hskip2pt
+    \colorvrule{Azul}{2.5pt}{13cm}
+    \hskip -0.4mm
+    \colorvrule{Oro}{1pt}{13cm}\\[10pt]
+    \includegraphics[height=2.6cm]{./titlepage/cfata_logo.png}
+  \end{center}
+\end{minipage}\quad
+%% Barra derecha - Títulos
+\begin{minipage}[c][9.5cm][s]{11cm}
+  \begin{center}
+    % Barra superior
+    {\large \scshape Universidad Nacional Aut\'onoma de M\'exico} % Nombre de la Universidad
+    \vspace{.3cm}
+    \colorhrule{Azul}{2.5pt} 
+
+    \vspace{.1cm}
+    \colorhrule{Oro}{1pt}
+
+    %\vspace{.3cm}
+    {\scshape Centro de F\'isica Aplicada y Tecnolog\'ia Avanzada}\\ % Nombre de la Escuela o Facultad
+    \vspace{.3cm}
+    % Título del trabajo
+    %\vspace{3cm}
+    \vspace{2.5cm}	
+    {\Large \scshape Manufactura Flexible y Rob\'otica} % Título de la tesis o trabajo
+    \vskip3cm
+    % Tipo de trabajo
+    \makebox[8cm][s]{\Huge P R O Y E C T O \hspace{0.5cm} F I N A L}\\[8pt] % Tipo de trabajo
+    POR:\\[5pt]
+    {\Large \scshape Ariel Cer\'on Gonz\'alez}\\
+    {\Large \scshape Alitzel L\'opez S\'anchez}\\
+    {\Large \scshape Carlos Madrigal Flores}\\
+    {\Large \scshape Jes\'us Enrique Castro Meza}\\
+    \vspace{1.5cm}
+    Profesor:\\
+    {\large \scshape Eduardo Espíndola L\'opez\\}
+    \vspace{0.5cm}
+    %{\small Coasesor:\\ {Dr. Guillermo Ramírez Santiago}\\}
+    \vspace{1cm}
+    {\scshape Juriquilla, Quer\'etaro\hfill Junio, 2018}
+  \end{center}
+\end{minipage}
+
+\end{center}
+\null\vfill
+\end{titlepage}
