@@ -1,0 +1,294 @@
+
+\documentclass{article}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Thursday, June 07, 2018 03:18:58}
+%TCIDATA{LastRevised=Thursday, June 07, 2018 04:34:45}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+\input{tcilatex}
+
+\begin{document}
+
+
+$c_{1}\ =\allowbreak \cos \theta _{1}$
+
+$c_{2}\ =\allowbreak \cos \theta _{2}$
+
+$c_{3}\ =\allowbreak \cos \theta _{3}$
+
+$c_{4}\ =\allowbreak \cos \theta _{4}$
+
+\bigskip 
+
+$s_{1}=\allowbreak \sin \theta _{1}$
+
+$s_{2}=\allowbreak \sin \theta _{2}$
+
+$s_{3}=\allowbreak \sin \theta _{3}$
+
+$s_{4}=\allowbreak \sin \theta _{4}$
+
+\bigskip 
+
+$A_{1}=\ \left[ 
+\begin{array}{cccc}
+c_{1} & 0 & -s_{1} & 0 \\ 
+s_{1} & 0 & c_{1} & 0 \\ 
+0 & -1 & 0 & d_{1} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] $
+
+\bigskip 
+
+$A_{2}=\ \left[ 
+\begin{array}{cccc}
+c_{2} & -s_{2} & 0 & a_{2}c_{2} \\ 
+s_{2} & c_{2} & 0 & a_{2}s_{2} \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] $
+
+\bigskip 
+
+$A_{3}=\ \left[ 
+\begin{array}{cccc}
+c_{3} & -s_{3} & 0 & a_{3}c_{3} \\ 
+s_{3} & c_{3} & 0 & a_{3}s_{3} \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] $
+
+$A_{4}=\ \left[ 
+\begin{array}{cccc}
+c_{4} & 0 & -s_{4} & 0 \\ 
+s_{4} & 0 & c_{4} & 0 \\ 
+0 & -1 & 0 & d_{4} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] $
+
+\bigskip 
+
+$A_{5}=\ \left[ 
+\begin{array}{cccc}
+c_{4} & -s_{4} & 0 & 0 \\ 
+s_{4} & c_{4} & 0 & 0 \\ 
+0 & 0 & 1 & d_{4} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] $
+
+\bigskip 
+
+$A_{1}A_{2}=\ \left[ 
+\begin{array}{cccc}
+c_{1} & 0 & -s_{1} & 0 \\ 
+s_{1} & 0 & c_{1} & 0 \\ 
+0 & -1 & 0 & d_{1} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \left[ 
+\begin{array}{cccc}
+c_{2} & -s_{2} & 0 & a_{2}c_{2} \\ 
+s_{2} & c_{2} & 0 & a_{2}s_{2} \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] $ : $\left[ 
+\begin{array}{cccc}
+c_{1}c_{2} & -c_{1}s_{2} & -s_{1} & a_{2}c_{1}c_{2} \\ 
+c_{2}s_{1} & -s_{1}s_{2} & c_{1} & a_{2}c_{2}s_{1} \\ 
+-s_{2} & -c_{2} & 0 & d_{1}-a_{2}s_{2} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \allowbreak $ : 
+
+\bigskip 
+
+$A_{1}A_{2}A_{3}=\ \left[ 
+\begin{array}{cccc}
+c_{1}c_{2} & -c_{1}s_{2} & -s_{1} & a_{2}c_{1}c_{2} \\ 
+c_{2}s_{1} & -s_{1}s_{2} & c_{1} & a_{2}c_{2}s_{1} \\ 
+-s_{2} & -c_{2} & 0 & d_{1}-a_{2}s_{2} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \allowbreak \left[ 
+\begin{array}{cccc}
+c_{3} & -s_{3} & 0 & a_{3}c_{3} \\ 
+s_{3} & c_{3} & 0 & a_{3}s_{3} \\ 
+0 & 0 & 1 & 0 \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] $ : $\left[ 
+\begin{array}{cccc}
+c_{1}c_{2}c_{3}-c_{1}s_{2}s_{3} & -c_{1}c_{2}s_{3}-c_{1}c_{3}s_{2} & -s_{1}
+& a_{2}c_{1}c_{2}+a_{3}c_{1}c_{2}c_{3}-a_{3}c_{1}s_{2}s_{3} \\ 
+c_{2}c_{3}s_{1}-s_{1}s_{2}s_{3} & -c_{2}s_{1}s_{3}-c_{3}s_{1}s_{2} & c_{1} & 
+a_{2}c_{2}s_{1}+a_{3}c_{2}c_{3}s_{1}-a_{3}s_{1}s_{2}s_{3} \\ 
+-c_{2}s_{3}-c_{3}s_{2} & s_{2}s_{3}-c_{2}c_{3} & 0 & 
+d_{1}-a_{2}s_{2}-a_{3}c_{2}s_{3}-a_{3}c_{3}s_{2} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \allowbreak $ : $\left[ 
+\begin{array}{cccc}
+c_{1}c_{2}c_{3}-c_{1}s_{2}s_{3} & -c_{1}c_{2}s_{3}-c_{1}c_{3}s_{2} & -s_{1}
+& a_{2}c_{1}c_{2}+a_{3}c_{1}c_{2}c_{3}-a_{3}c_{1}s_{2}s_{3} \\ 
+c_{2}c_{3}s_{1}-s_{1}s_{2}s_{3} & -c_{2}s_{1}s_{3}-c_{3}s_{1}s_{2} & c_{1} & 
+a_{2}c_{2}s_{1}+a_{3}c_{2}c_{3}s_{1}-a_{3}s_{1}s_{2}s_{3} \\ 
+-c_{2}s_{3}-c_{3}s_{2} & s_{2}s_{3}-c_{2}c_{3} & 0 & 
+d_{1}-a_{2}s_{2}-a_{3}c_{2}s_{3}-a_{3}c_{3}s_{2} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \allowbreak $ 
+
+\bigskip 
+
+
+\bigskip 
+
+$A_{1}A_{2}A_{3}A_{4}=\ $ $\left[ 
+\begin{array}{cccc}
+c_{1}c_{2}c_{3}-c_{1}s_{2}s_{3} & -c_{1}c_{2}s_{3}-c_{1}c_{3}s_{2} & -s_{1}
+& a_{2}c_{1}c_{2}+a_{3}c_{1}c_{2}c_{3}-a_{3}c_{1}s_{2}s_{3} \\ 
+c_{2}c_{3}s_{1}-s_{1}s_{2}s_{3} & -c_{2}s_{1}s_{3}-c_{3}s_{1}s_{2} & c_{1} & 
+a_{2}c_{2}s_{1}+a_{3}c_{2}c_{3}s_{1}-a_{3}s_{1}s_{2}s_{3} \\ 
+-c_{2}s_{3}-c_{3}s_{2} & s_{2}s_{3}-c_{2}c_{3} & 0 & 
+d_{1}-a_{2}s_{2}-a_{3}c_{2}s_{3}-a_{3}c_{3}s_{2} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \allowbreak $ $\left[ 
+\begin{array}{cccc}
+c_{4} & 0 & -s_{4} & 0 \\ 
+s_{4} & 0 & c_{4} & 0 \\ 
+0 & -1 & 0 & d_{4} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] =\allowbreak \left[ 
+\begin{array}{cccc}
+c_{4}\left( c_{1}c_{2}c_{3}-c_{1}s_{2}s_{3}\right) -s_{4}\left(
+c_{1}c_{2}s_{3}+c_{1}c_{3}s_{2}\right)  & s_{1} & -c_{4}\left(
+c_{1}c_{2}s_{3}+c_{1}c_{3}s_{2}\right) -s_{4}\left(
+c_{1}c_{2}c_{3}-c_{1}s_{2}s_{3}\right)  & 
+a_{2}c_{1}c_{2}-d_{4}s_{1}+a_{3}c_{1}c_{2}c_{3}-a_{3}c_{1}s_{2}s_{3} \\ 
+c_{4}\left( c_{2}c_{3}s_{1}-s_{1}s_{2}s_{3}\right) -s_{4}\left(
+c_{2}s_{1}s_{3}+c_{3}s_{1}s_{2}\right)  & -c_{1} & -c_{4}\left(
+c_{2}s_{1}s_{3}+c_{3}s_{1}s_{2}\right) -s_{4}\left(
+c_{2}c_{3}s_{1}-s_{1}s_{2}s_{3}\right)  & 
+c_{1}d_{4}+a_{2}c_{2}s_{1}+a_{3}c_{2}c_{3}s_{1}-a_{3}s_{1}s_{2}s_{3} \\ 
+-c_{4}\left( c_{2}s_{3}+c_{3}s_{2}\right) -s_{4}\left(
+c_{2}c_{3}-s_{2}s_{3}\right)  & 0 & s_{4}\left( c_{2}s_{3}+c_{3}s_{2}\right)
+-c_{4}\left( c_{2}c_{3}-s_{2}s_{3}\right)  & 
+d_{1}-a_{2}s_{2}-a_{3}c_{2}s_{3}-a_{3}c_{3}s_{2} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \allowbreak $ :
+
+$\left[ 
+\begin{array}{cccc}
+-c_{1}\left(
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3}\right)  & 
+s_{1} & -c_{1}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)  & 
+a_{2}c_{1}c_{2}-d_{4}s_{1}+a_{3}c_{1}c_{2}c_{3}-a_{3}c_{1}s_{2}s_{3} \\ 
+-s_{1}\left(
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3}\right)  & 
+-c_{1} & -s_{1}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)  & 
+c_{1}d_{4}+a_{2}c_{2}s_{1}+a_{3}c_{2}c_{3}s_{1}-a_{3}s_{1}s_{2}s_{3} \\ 
+s_{2}s_{3}s_{4}-c_{2}c_{4}s_{3}-c_{3}c_{4}s_{2}-c_{2}c_{3}s_{4} & 0 & 
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3} & 
+d_{1}-a_{2}s_{2}-a_{3}c_{2}s_{3}-a_{3}c_{3}s_{2} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \allowbreak $
+
+\bigskip 
+
+$A_{1}A_{2}A_{3}A_{4}A_{5}=\ \left[ 
+\begin{array}{cccc}
+-c_{1}\left(
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3}\right)  & 
+s_{1} & -c_{1}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)  & 
+a_{2}c_{1}c_{2}-d_{4}s_{1}+a_{3}c_{1}c_{2}c_{3}-a_{3}c_{1}s_{2}s_{3} \\ 
+-s_{1}\left(
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3}\right)  & 
+-c_{1} & -s_{1}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)  & 
+c_{1}d_{4}+a_{2}c_{2}s_{1}+a_{3}c_{2}c_{3}s_{1}-a_{3}s_{1}s_{2}s_{3} \\ 
+s_{2}s_{3}s_{4}-c_{2}c_{4}s_{3}-c_{3}c_{4}s_{2}-c_{2}c_{3}s_{4} & 0 & 
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3} & 
+d_{1}-a_{2}s_{2}-a_{3}c_{2}s_{3}-a_{3}c_{3}s_{2} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \allowbreak \left[ 
+\begin{array}{cccc}
+c_{4} & -s_{4} & 0 & 0 \\ 
+s_{4} & c_{4} & 0 & 0 \\ 
+0 & 0 & 1 & d_{4} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] $ : $\left[ 
+\begin{array}{cccc}
+s_{1}s_{4}-c_{1}c_{4}\left(
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3}\right)  & 
+c_{4}s_{1}+c_{1}s_{4}\left(
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3}\right)  & 
+-c_{1}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)  & 
+a_{2}c_{1}c_{2}-c_{1}d_{4}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)
+-d_{4}s_{1}+a_{3}c_{1}c_{2}c_{3}-a_{3}c_{1}s_{2}s_{3} \\ 
+-c_{1}s_{4}-c_{4}s_{1}\left(
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3}\right)  & 
+s_{1}s_{4}\left(
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3}\right)
+-c_{1}c_{4} & -s_{1}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)  & 
+c_{1}d_{4}-d_{4}s_{1}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)
++a_{2}c_{2}s_{1}+a_{3}c_{2}c_{3}s_{1}-a_{3}s_{1}s_{2}s_{3} \\ 
+-c_{4}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)  & 
+s_{4}\left(
+c_{2}c_{3}s_{4}+c_{2}c_{4}s_{3}+c_{3}c_{4}s_{2}-s_{2}s_{3}s_{4}\right)  & 
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3} & 
+d_{1}+d_{4}\left(
+c_{2}s_{3}s_{4}-c_{2}c_{3}c_{4}+c_{3}s_{2}s_{4}+c_{4}s_{2}s_{3}\right)
+-a_{2}s_{2}-a_{3}c_{2}s_{3}-a_{3}c_{3}s_{2} \\ 
+0 & 0 & 0 & 1%
+\end{array}%
+\right] \allowbreak $
+
+\end{document}
