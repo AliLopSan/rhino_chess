@@ -1,0 +1,64 @@
+Implementación de un robot manipulador tipo Rhino XR-3 para jugar ajedrez
+
+
+
+Objetivo
+
+
+
+Objetivo primario
+
+
+Diseñar el sistema de control de un robot tipo Rhino XR-3 para que este juegue ajedrez mediante el uso de una proporcional integral derivativo (PID) y protocolos de comunicación entre microcontroladores. 
+
+Objetivos secundarios
+
+
+Implementar un sistema de control PID mediante su modelado matemático y la implementación con un microcontrolador para dirigir las articulaciones del robot.
+
+Establecer comunicación UART y SPI entre microcontrolador con su programación en lenguaje C para realizar el procesamiento y efectuar el control de la cinemática inversa del robot. 
+
+
+
+Meta
+
+Tener al robot manipulador Rhino XR-3 siendo capaz de jugar ajedrez (mover las piezas) indicando las jugadas del usuario y respondiendo a estas en automático.
+
+
+
+Resumen
+
+Se implemento un robot tipo Rhino XR-3 para que este jugara ajedrez mediante el uso de varios microcontroladores PIC16F877A los cuales guiándose en la cinemática inversa del robot manipulador lo dirigieran con un control tipo proporcional integral derivativo (PID) a base de voltaje y encoders de cada motor. Los microcontroladores se comunican entre ellos por protocolo de comunicación SPI (por sus siglas en ingles de Serial Peripheral Interface) como esclavos con un maestro el cual se comunica por protocolo Transmisor-Receptor Asíncrono Universal (UART por sus siglas en ingles), con la computadora donde se realiza todo el procesamiento para orientar el efector final (la pinza) del manipulador.
+
+
+
+Introducción
+
+El ajedrez es un juego, que se buscó introducir como alternativa a otros juegos de meza ya que estos promovían la suerte mientras que el ajedrez promueve la habilidad del(os) jugadores. Se ha apuntado al hecho de que el ajedrez permite desarrollar habilidades que pueden ser útiles en la vida de un individuo debido a la importancia de la estrategia dentro del juego [1]. Aunque no se sabe con exactitud el origen del juego, se puede mencionar en que consiste este; se inicia con un set de 16 piezas cada jugador que se rigen bajo reglas en un tablero de 64 casillas y se busca derrocar al rey del oponente y esto mismo ha sido implementado en su versión de computadora permitiendo el juego entre un humano y una maquina [1, 2].  De aquí se pensó que se podría llevar el juego de ajedrez contra una maquina a otro nivel realizando las jugadas mediante un robot manipulador [3].
+ Entiéndase por robot aquella maquina en donde se integran piezas mecánicas, eléctricas, electrónicas y de comunicación las cuales están programadas para cumplir con ciertas tareas. En particular un tipo de robot son los manipuladores que son básicamente brazos articulados y que son capaces de mover piezas, materiales o herramientas tras una programación de estos movimientos; con el objetivo de automatizar dichos movimientos [3]. En particular se seleccionó un robot Rhino XR-3 que es un manipulador de 5 grados de libertad dado sus 5 articulaciones y 5 eslabones el cual es usado ampliamente en proyectos con fines educativos [4]. 
+En busca de modelar el movimiento del manipulador, se requiere de la cinemática inversa [3,5]. La cinemática inversa se encarga de que el usuario indique la posición final, o deseada para un robot (mediante indicar la posición y la orientación del efector final) y a partir de esto modelar el robot como una cadena cinemática de la cual se determinan las orientaciones de los eslabones que la conforman; estos están directamente relacionados con los eslabones del robot y son orientados conforme lo permiten las articulaciones de estos (es decir los motores). Durante este proceso se generan marcos de referencia en los diferentes eslabones del manipulador y estos se restringen al movimiento que permiten las articulaciones [5].
+Para implementar el modelo de cinemática inversa en el robot, se requiere de cierta instrumentación además de requisitos relacionados con el procesamiento [3,4,6]. Dentro de los requisitos se necesita de un microcontrolador, el cual es una herramienta de control programable capas de efectuar tareas al comunicarse al exterior con sensores y actuadores [7]. Un microcontrolador amplíenme usado es el PIC16F877A el cual por sus características se presta a su uso en distintas tareas de automatización que permiten aplicar los módulos que tiene presentes. Algunas de las características esenciales que ofrece el PIC16F877A incluyen su comunicación UART, comunicación SPI, la generación de PWM (Pulse Width Modulation por sus siglas en inglés y útil para el control de motores) e interrupciones que pueden ser interpretadas para esquemas de control [8].
+Refiriéndose al control los motores en cuanto al software, es usual utilizar un PWM, que viene de sus siglas en ingles de Pulse Width Modulation lo cual consiste en mandar una señal periódica cuadrada de la que se le modifica su ciclo de trabajo para modular la energía que se le entrega al motor de tal modo que se controle su posición [9]. Para conseguir esto se requiere de un driver de potencia, por ejemplo, un puente H (el puente H dual L298 fue seleccionado en este caso), el cual es capaz de entregar la corriente que el motor pueda requerir [9,10]. Adicional a esto, el uso de una compuerta lógica AND (en este caso se seleccionó la compuerta 7408) permite dividir el circuito de tal modo que el microcontrolador no pueda ser dañado directamente por descargas provenientes del motor [4,11].
+Oro factor a considerar para el control del manipulador es el poder determinar la posición correctamente de los motores, para esto se hace uso de un encoder, el cual es un dispositivo que puede indicar el giro de un motor al tener un circuito óptico interno que envía dos señales cuadradas desfasadas y que pueden ser interpretadas para conocer cuánto se ha desplazado el motor y en qué dirección [12].
+Las herramientas antes descritas se pueden acoplar a un sistema de control tipo PID, que matemáticamente describe el uso de la corriente que se le administra a un motor para su control y eliminación del error al querer posicionarlo en determinado punto [6,13]. El esquema de control se rige por una parte proporcional sin embargo al presentar demasiado error este se busca optimizar con una parte derivativa y debido a que esto puede no llegar al punto deseado, es necesario incluir la parte integral; se podría decir en términos sencillos que la parte proporcional hace el ajuste principal mientras que la parte integral se encarga la compensación y la parte derivativa funciona para una anticipación [13].
+Por último, se debe hacer mención de los protocolos de comunicación utilizados para comunicar un microcontrolador con una computadora para realizar el procesamiento de la cinemática indirecta y el control PID de cada motor, y la comunicación entre los múltiples microcontroladores que se usaran para controlar cada motor individual [4]. La comunicación UART es un protocolo de comunicación en ambos sentidos, es decir, tanto se puede recibir como transmitir información siendo principalmente usada para comunicarse con una PC (como en este caso) o con PDA teniendo la ventaja de simpleza en cuanto a conexiones, aunque con la desventaja de la velocidad [14]. Debido a la desventaja del tiempo, se propone utilizar el protocolo de comunicación SPI para la comunicación entre microcontroladores, donde además es posible tener un maestro, el cual se encarga de administrar a todos los esclavos, es decir los demás microcontroladores; esta comunicación es bidireccional y además es más rápida que la antes mencionada [15] brindando así las características necesarias para controlar los motores individualmente [4, 15].
+
+
+
+Bibliografía
+
+[1]	Tomlinson, C. (1845). Amusements in chess. JW Parker.
+[2]	Bartel, R. (2001). Ajedrez por ordenador. Ferre Moret.
+[3]	Baturone, A. O. (2005). Robótica: manipuladores y robots móviles. Marcombo.
+[4]	Carias, L. G. (1988). Digital position and velocity controller for the Rhino XR-3 Robot (Doctoral dissertation).
+[5]	Spong, M. W., Hutchinson, S., & Vidyasagar, M. (2006). Robot modeling and control (Vol. 3, pp. 187-227). New York: Wiley.
+[6]	Chávez Moreno, R. G. (2011). Desarrollo de control adaptable y HMI para robot poliarticulado serial (Doctoral dissertation).
+[7]	Kamal, R. (2011). Microcontrollers: Architecture, programming, interfacing and system design. Pearson Education India.
+[8]	Datasheet, M. PIC16F87X Data Sheet 28/40-Pin 8-Bit CMOS Flash Microcontrollers. online: www. microchip. com.
+[9]	Holmes, D. G., & Lipo, T. A. (2003). Pulse width modulation for power converters: principles and practice (Vol. 18). John Wiley & Sons.
+[10]	Microelectronics, S. T. (2000). L298–Dual Full-Bridge Driver–Datasheet.
+[11]	Instruments, T. 74LS08 Datasheet. WWW webpage: http://www. cs. amherst. edu/~ sfkaplan/courses/spring-2002/cs14/74LS08-datasheet. pdf [accessed May 2004].
+[12]	http://encoder.com/blog/encoder-basics/que-es-un-encoder/
+[13]	Hernández-Guzmán, V. M., Silva-Ortigoza, R., & Carrillo-Serrano, R. V. (2013). Control Automático: Teoría de diseño, construcción de prototipos, modelado, identificación y pruebas experimentales. COLECCIÓN CIDETEC.
+[14]	http://www.el.uma.es/marin/Practica4_UART.pdf
+[15]	López, E. (2011). Ingeniería en microcontroladores/Protocolo SPI (serial peripherical interface).
