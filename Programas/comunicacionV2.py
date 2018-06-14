@@ -39,7 +39,7 @@ else:
 print("------Iniciando Comunicación------")
 print("\n")
 
-reset_input_buffer()
+UART.reset_input_buffer()
 
 s = int(input())
 UART.write(s)
@@ -47,4 +47,4 @@ UART.write(s)
 r = UART.read(size = 8)
 print("\n Data in: \n", r)
 
-reset_output_buffer()    
+UART.reset_output_buffer()    
